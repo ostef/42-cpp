@@ -22,4 +22,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all norme clean fclean re
-
