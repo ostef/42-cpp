@@ -1,4 +1,6 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -9,9 +11,18 @@ int main()
 	c1.takeDamage (1);
 	c2.setAttackDamage (105);
 	c2.attack ("Maximus Pepinus");
-	c2.takeDamage (100);
+	c2.takeDamage (1000);
 	c2.attack ("THIS SHOULDN'T WORK");
 	c2.beRepaired (10);
 	c2.attack ("Michel");
+
+	ScavTrap scav = ScavTrap ("Scoobydoo");
+	scav.attack ("Un mec random");
+	scav.guardGate ();
+
+	FragTrap frag = FragTrap ("Scoobydoo but different");
+	frag.attack ("Un mec random");
+	frag.highFiveGuys ();
+
 	return 0;
 }
