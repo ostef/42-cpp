@@ -1,6 +1,6 @@
-NAME = phone_book
-HEADER_FILES = PhoneBook.hpp Contact.hpp
-SRC_FILES = main.cpp PhoneBook.cpp Contact.cpp
+NAME = account
+HEADER_FILES = Account.hpp
+SRC_FILES = tests.cpp Account.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 CPP = g++
 CPP_FLAGS = -Wall -Wextra -Werror --std=c++98

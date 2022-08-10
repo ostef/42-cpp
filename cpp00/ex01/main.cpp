@@ -13,10 +13,7 @@ int main ()
 		std::getline (std::cin, command);
 		if (command == "ADD")
 		{
-			if (book.is_full ())
-				std::cout << "Cannot add more than " << MAX_CONTACTS << " contacts." << std::endl;
-			else
-				book.add_contact (Contact::read_from_stdin ());
+			book.add_contact (Contact::read_from_stdin ());
 		}
 		else if (command == "SEARCH")
 		{

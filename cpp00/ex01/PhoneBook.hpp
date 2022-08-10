@@ -13,15 +13,16 @@ class PhoneBook
 public:
 	PhoneBook ();
 
-	bool add_contact (Contact contact);
+	void add_contact (Contact contact);
 	void display () const;
 	Contact get_contact (int index) const;
 	int get_count () const;
 	bool is_full () const;
 
 private:
-	Contact contacts[MAX_CONTACTS];
-	int     count;
+	Contact m_contacts[MAX_CONTACTS];
+	int     m_cursor;
+	int     m_count;
 };
 
 #endif
