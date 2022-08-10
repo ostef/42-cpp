@@ -2,12 +2,13 @@ NAME = replace
 HEADER_FILES = 
 SRC_FILES = main.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
-CPP = g++
+CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror --std=c++98
+DEPENDENCIES = $(HEADER_FILES) Makefile
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADER_FILES)
+%.o: %.cpp $(DEPENDENCIES)
 	$(CPP) $(CPP_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_FILES)
