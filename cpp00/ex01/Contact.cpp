@@ -29,16 +29,45 @@ Contact Contact::read_from_stdin ()
 {
 	Contact result = Contact ();
 
-	std::cout << "First name: ";
-	std::getline (std::cin, result.first_name);
-	std::cout << "Last name: ";
-	std::getline (std::cin, result.last_name);
-	std::cout << "Nickname: ";
-	std::getline (std::cin, result.nickname);
-	std::cout << "Phone number: ";
-	std::getline (std::cin, result.phone_number);
-	std::cout << "Darkest secret: ";
-	std::getline (std::cin, result.darkest_secret);
+	while (result.first_name.empty () && std::cin.good ())
+	{
+		std::cout << "First name: ";
+		std::getline (std::cin, result.first_name);
+		if (result.first_name.empty ())
+			std::cout << "You must enter a non empty string!" << std::endl;
+	}
+
+	while (result.last_name.empty () && std::cin.good ())
+	{
+		std::cout << "Last name: ";
+		std::getline (std::cin, result.last_name);
+		if (result.last_name.empty ())
+			std::cout << "You must enter a non empty string!" << std::endl;
+	}
+
+	while (result.nickname.empty () && std::cin.good ())
+	{
+		std::cout << "Nickname: ";
+		std::getline (std::cin, result.nickname);
+		if (result.nickname.empty ())
+			std::cout << "You must enter a non empty string!" << std::endl;
+	}
+
+	while (result.phone_number.empty () && std::cin.good ())
+	{
+		std::cout << "Phone number: ";
+		std::getline (std::cin, result.phone_number);
+		if (result.phone_number.empty ())
+			std::cout << "You must enter a non empty string!" << std::endl;
+	}
+
+	while (result.darkest_secret.empty () && std::cin.good ())
+	{
+		std::cout << "Darkest secret: ";
+		std::getline (std::cin, result.darkest_secret);
+		if (result.darkest_secret.empty ())
+			std::cout << "You must enter a non empty string!" << std::endl;
+	}
 
 	return result;
 }

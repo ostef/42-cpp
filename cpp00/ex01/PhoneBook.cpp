@@ -11,6 +11,8 @@ void PhoneBook::add_contact (Contact contact)
 	{
 		m_contacts[m_cursor] = contact;
 		m_cursor += 1;
+		if (m_cursor >= MAX_CONTACTS)
+			m_cursor = 0;
 	}
 	else
 	{

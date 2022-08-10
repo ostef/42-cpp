@@ -7,7 +7,7 @@ int main ()
 {
 	PhoneBook book = PhoneBook ();
 	std::string command = std::string ();
-	while (true)
+	while (std::cin.good ())
 	{
 		std::cout << ">";
 		std::getline (std::cin, command);
@@ -18,7 +18,7 @@ int main ()
 		else if (command == "SEARCH")
 		{
 			book.display ();
-			int contact_index = 0;
+			int contact_index = -1;
 			std::cout << "Which contact do you want to see ? ";
 			std::cin >> contact_index;
 			// Ignore everything after the number we just read, until the '\n'.
