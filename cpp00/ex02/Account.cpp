@@ -131,9 +131,12 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
+#ifdef STATIC_TIMESTAMP
+	std::cout << "[19920104_091532] ";
+#else
 	std::time_t current_time = std::time (NULL);
 	std::tm tm = *std::localtime (&current_time);
-	
+
 	std::cout << "[";
 	std::cout << std::setw (4) << std::setfill ('0') << 1900 + tm.tm_year;
 	std::cout << std::setw (2) << std::setfill ('0') << tm.tm_mon;
@@ -143,4 +146,5 @@ void	Account::_displayTimestamp( void )
 	std::cout << std::setw (2) << std::setfill ('0') << tm.tm_min;
 	std::cout << std::setw (2) << std::setfill ('0') << tm.tm_sec;
 	std::cout << "] ";
+#endif
 }

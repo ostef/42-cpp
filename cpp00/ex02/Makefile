@@ -2,13 +2,14 @@ NAME = account
 HEADER_FILES = Account.hpp
 SRC_FILES = tests.cpp Account.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
-CPP = g++
+CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror --std=c++98
+DEPENDENCIES = $(HEADER_FILES) Makefile
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADER_FILES)
-	$(CPP) $(CPP_FLAGS) -c $< -o $@
+%.o: %.cpp $(DEPENDENCIES)
+	$(CPP) $(CPP_FLAGS) -DSTATIC_TIMESTAMP -c $< -o $@
 
 $(NAME): $(OBJ_FILES)
 	$(CPP) $(OBJ_FILES) -o $(NAME)
