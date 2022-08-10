@@ -1,0 +1,25 @@
+NAME = polymorphism
+HEADER_FILES = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+OBJ_FILES = $(SRC_FILES:.cpp=.o)
+CPP = g++
+CPP_FLAGS = -Wall -Wextra -Werror --std=c++98
+
+all: $(NAME)
+
+%.o: %.cpp $(HEADER_FILES)
+	$(CPP) $(CPP_FLAGS) -c $< -o $@
+
+$(NAME): $(OBJ_FILES)
+	$(CPP) $(OBJ_FILES) -o $(NAME)
+
+clean:
+	rm -f $(OBJ_FILES)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all norme clean fclean re
+
