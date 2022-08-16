@@ -1,6 +1,6 @@
-NAME = polymorphism
-HEADER_FILES = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
-SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+NAME = materia
+HEADER_FILES = AMateria.hpp Ice.hpp Cure.hpp Character.hpp MateriaSource.hpp
+SRC_FILES = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
