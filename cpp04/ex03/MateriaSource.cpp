@@ -13,6 +13,8 @@ MateriaSource::MateriaSource (const MateriaSource &other)
 
 MateriaSource::~MateriaSource ()
 {
+	for (int i = 0; i < 4; i += 1)
+		delete m_materias[i];
 }
 
 MateriaSource &MateriaSource::operator= (const MateriaSource &other)
