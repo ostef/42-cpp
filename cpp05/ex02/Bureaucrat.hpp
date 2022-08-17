@@ -5,6 +5,8 @@
 #include <string>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 public:
@@ -31,6 +33,9 @@ public:
 
 	const std::string &getName () const;
 	int getGrade () const;
+
+	void signForm (Form &form);
+	void executeForm (const Form &form) const;
 
 private:
 	std::string m_name;

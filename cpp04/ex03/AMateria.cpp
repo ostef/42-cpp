@@ -1,4 +1,5 @@
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 AMateria::AMateria (const std::string &type) : m_type (type)
 {
@@ -30,6 +31,5 @@ const std::string &AMateria::getType () const
 
 void AMateria::use (ICharacter &target)
 {
-	(void)target;
-	std::cout << "Default implementation of AMateria::use." << std::endl;
+	std::cout << "Default implementation of AMateria::use on " << target.getName () << "." << std::endl;
 }
