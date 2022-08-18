@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -6,31 +7,29 @@
 
 int main()
 {
-	ShrubberyCreationForm scf ("my_garden");
-	RobotomyRequestForm rrf ("non robotomized dude");
-	PresidentialPardonForm prf ("BadGuy");
+	Bureaucrat chadBureaucrat = Bureaucrat ("Chad", 1);
+	Intern incelIntern;
 
-	Bureaucrat billy ("Billy", 130);
-	Bureaucrat better_billy ("Better Billy", 70);
-	Bureaucrat magnificent_billy ("Magnificent Billy", 1);
+	Form *form = incelIntern.makeForm("Shrubbery Creation", "Bender");
+	chadBureaucrat.signForm (*form);
+	chadBureaucrat.executeForm (*form);
 
-	billy.executeForm (scf);
-	billy.signForm (scf);
-	billy.executeForm (scf);
+	delete form;
 
-	billy.signForm (rrf);
-	better_billy.signForm (rrf);
-	better_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
-	magnificent_billy.executeForm (rrf);
+	form = incelIntern.makeForm("Robotomy Request", "Bender");
+	chadBureaucrat.signForm (*form);
+	chadBureaucrat.executeForm (*form);
+	
+	delete form;
 
-	magnificent_billy.signForm (prf);
-	better_billy.executeForm (prf);
-	magnificent_billy.executeForm (prf);
+	form = incelIntern.makeForm("Presidential Pardon", "Bender");
+	chadBureaucrat.signForm (*form);
+	chadBureaucrat.executeForm (*form);
+
+	delete form;
+
+	form = incelIntern.makeForm("Make PP Bigger", "Bender");
+	delete form;
 
 	return 0;
 }

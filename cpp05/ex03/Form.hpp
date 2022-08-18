@@ -33,7 +33,7 @@ private:
 public:
 	Form (const std::string &name, int grade_to_sign, int grade_to_execute);
 	Form (const Form &other);
-	~Form ();
+	virtual ~Form ();
 
 	const std::string &getName () const;
 	bool isSigned () const;

@@ -1,6 +1,6 @@
 NAME = form
-HEADER_FILES = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
-SRC_FILES = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+HEADER_FILES = Bureaucrat.hpp Intern.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+SRC_FILES = main.cpp Bureaucrat.cpp Intern.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98

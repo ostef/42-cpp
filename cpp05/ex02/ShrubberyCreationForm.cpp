@@ -25,7 +25,7 @@ void ShrubberyCreationForm::execute (const Bureaucrat &by) const
 		throw FormNotSignedException ();
 
 	std::ofstream file;
-	file.open (m_target + "_shrubbery", std::ios_base::app);
+	file.open ((m_target + "_shrubbery").c_str (), std::ios_base::app);
 	if (file.fail ())
 		throw FileAccessException ();
 	
